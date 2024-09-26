@@ -1,0 +1,25 @@
+{
+    "name": "dual/kronikl",
+    "description": "A model history tracking library for Laravel.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dual IT Services",
+            "email": "engineering@dual.ph"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Dual\\Kronikl\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dual\\Kronikl\\KroniklServiceProvider"
+            ]
+        }
+    }
+}
