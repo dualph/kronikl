@@ -140,7 +140,7 @@ class KroniklServiceProvider extends ServiceProvider
     {
         $data = $this->generate("create", [], $this->strip($model, $record->getAttributes()));
 
-        DB::table("audit_logs")->insert([
+        DB::table("kronikl_logs")->insert([
             "user_id" => $this->getUserId(),
             "model_name" => $model,
             "model_id" => $record->{$record->getKeyName()},
@@ -155,7 +155,7 @@ class KroniklServiceProvider extends ServiceProvider
     {
         $data = $this->generate("update", $this->strip($model, $record->getOriginal()), $this->strip($model, $record->getChanges()));
 
-        DB::table("audit_logs")->insert([
+        DB::table("kronikl_logs")->insert([
             "user_id" => $this->getUserId(),
             "model_name" => $model,
             "model_id" => $record->{$record->getKeyName()},
@@ -170,7 +170,7 @@ class KroniklServiceProvider extends ServiceProvider
     {
         $data = $this->generate("delete", $this->strip($model, $record->getAttributes()));
 
-        DB::table("audit_logs")->insert([
+        DB::table("kronikl_logs")->insert([
             "user_id" => $this->getUserId(),
             "model_name" => $model,
             "model_id" => $record->{$record->getKeyName()},
